@@ -1,0 +1,4 @@
+SELECT date_format(data, "%Y-%m") as mese, COUNT(*) as utenti
+FROM utenti
+GROUP BY YEAR(data), MONTH(data)
+ORDER BY data DESC

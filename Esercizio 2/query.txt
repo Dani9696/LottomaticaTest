@@ -1,0 +1,7 @@
+UPDATE utenti SET campione = 1
+WHERE id IN (
+	SELECT ID_utente 
+	FROM partite 
+	GROUP BY ID_utente 
+    	HAVING COUNT(*) >= 10
+    );
